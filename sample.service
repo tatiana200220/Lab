@@ -1,0 +1,17 @@
+[Unit]
+Description=This service is needed to run my kitty server
+
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+ExecStart=java -jar /opt/sample/service.jar
+User=Tetiana
+
+Restart=always
+RestartSec=10
+
+Environment=PORT=8888
+
+[Install]
+WantedBy=multi-user.target
